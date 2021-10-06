@@ -16,7 +16,7 @@ The main purpose of this laboratory work was to study and practice some of the c
 
 **Abstract Factory** is a creational design pattern, which provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes.
 
-​	For the sample project the following pattersn have been implemented: Singleton, Builder and Factory Method. Singleton class is represented by the `RandomNonBuyers` class which creates a sipmle simulation of some clients in the shop that are not going to purchase anything.
+​	For the sample project the following patterns have been implemented: Singleton, Builder and Factory Method. The Singleton class is represented by the `RandomNonBuyers` class, which creates a simple simulation of some clients in the shop that are not going to purchase anything.
 
 ```c#
 public static RandomNonBuyers GetRandomNonBuyers()
