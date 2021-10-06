@@ -4,7 +4,7 @@
 >
 > Puscas Dumitru, FAF-192
 
-The main purpose of this laboratory work was to study and practice some of the creation patterns from the following list:
+The main purpose of this laboratory work was to study and practice some of the creational patterns from the following list:
 
 **Singleton** is a creational design pattern that restricts the instantiation of a class to one "single" instance. This is useful when exactly one object is needed to coordinate actions across the system.
 
