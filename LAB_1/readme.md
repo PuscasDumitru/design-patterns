@@ -20,20 +20,20 @@ The main purpose of this laboratory work was to study and practice some of the c
 
 ```c#
 public static RandomNonBuyers GetRandomNonBuyers()
-        {
+{
          
+    if (instance == null)
+    {
+        lock (locker)
+        {
             if (instance == null)
             {
-                lock (locker)
-                {
-                    if (instance == null)
-                    {
-                        instance = new RandomNonBuyers();
-                    }
-                }
+               instance = new RandomNonBuyers();
             }
-            return instance;
         }
+    }
+    return instance;
+}
 ```
 
 ​	The `VehicleBuilder` represents the builder class for `Vehicle` and is used to instantiate different types of vehicles in a much easier way than the straightforward one. All the classes involved can be found in the 'Builders' folder.
@@ -64,4 +64,4 @@ doc.ListPages();
 The result of some basic client code:
 
 
-![gif](https://github.com/nichitaa/SDTM-Labs/blob/main/Lab-1/gif/gif.gif)
+![]()
