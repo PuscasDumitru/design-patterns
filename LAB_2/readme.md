@@ -68,7 +68,7 @@ The result of some basic client code:
 
 ### **Structural design patterns**
 
-Structural Patterns. Structural patterns are concerned with how classes and objects are composed to form larger structures. Structural class patterns use inheritance to compose interfaces or implementations. As a simple example, consider how multiple inheritance mixes two or more classes into one.
+Structural patterns are concerned with how classes and objects are composed to form larger structures. Structural class patterns use inheritance to compose interfaces or implementations. As a simple example, consider how multiple inheritance mixes two or more classes into one.
 
 **Facade** is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes.
 
