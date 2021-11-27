@@ -1,26 +1,76 @@
-> # *Creational Design Patterns*
+> # *Design Patterns*
 >
 > 
 >
 > Puscas Dumitru, FAF-192
 
-The main purpose of this laboratory work was to study and practice some of the structural patterns from the following list:
+The main purpose of this laboratory is to study and practice some of the creational, structural and behavioral programming design patterns. 
 
-**Adapter** is a structural design pattern that allows objects with incompatible interfaces to collaborate.
+### **Creational design patterns**
 
-**Bridge** is a structural design pattern that lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
+Creational patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.
 
-**Composite** is a structural design pattern that lets you compose objects into tree structures and then work with these structures as if they were individual objects.
+**Singleton** is a creational design pattern that restricts the instantiation of a class to one "single" instance. This is useful when exactly one object is needed to coordinate actions across the system.
 
-**Decorator** is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+For the sample project the following patterns have been implemented: Singleton, Builder and Factory Method. The Singleton class is represented by the `RandomNonBuyers` class, which creates a simple simulation of some clients in the shop that are not going to purchase anything.
+
+```c#
+public static RandomNonBuyers GetRandomNonBuyers()
+{
+         
+    if (instance == null)
+    {
+        lock (locker)
+        {
+            if (instance == null)
+            {
+               instance = new RandomNonBuyers();
+            }
+        }
+    }
+    return instance;
+}
+```
+**Builder** is a creational design pattern designed to provide a flexible solution to various object creation problems in object-oriented programming. The intent of the Builder design pattern is to separate the construction of a complex object from its representation.
+
+The `VehicleBuilder` represents the builder class for `Vehicle` and is used to instantiate different types of vehicles in a much easier way than the straightforward one. All the classes involved can be found in the 'Builders' folder.
+
+```c#
+builder = new ScooterBuilder();
+shop.Construct(builder);
+
+builder = new MotorCycleBuilder();
+shop.Construct(builder);
+            
+builder = new CarBuilder();
+shop.Construct(builder);
+```
+
+**Factory method** is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor.
+
+The `Document` class implements the simple Factory method, which creates a new instance of a concreate product by a given parameter, either it is a Credit or a simple PaymentCheck. All the classes involved can be found in the 'FactoryStuff' folder.
+
+```c#
+
+doc = new PaymentCheck();
+doc.ListPages();
+            
+doc = new Credit();
+doc.ListPages();
+
+```
+
+The result of some basic client code:
+
+
+![png](https://github.com/PuscasDumitru/FAF.TMPS16.1-Labs/blob/main/LAB_1/screen.png)
+
+
+### **Structural design patterns**
+
+Structural Patterns. Structural patterns are concerned with how classes and objects are composed to form larger structures. Structural class patterns use inheritance to compose interfaces or implementations. As a simple example, consider how multiple inheritance mixes two or more classes into one.
 
 **Facade** is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes.
-
-**Flyweight** is a structural design pattern that lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
-
-**Proxy** is a structural design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
-
-​	The following patterns have been implemented into the project of the previous laboratory work: Facade, Decorator and Bridge. 
 
 The Facade class is represented by the `Cashier` class, which creates a simple interface which allows the client code to be much cleaner
 
@@ -37,7 +87,9 @@ if(vehType == "scooter")
 ..code for other types of vehicle
 ```
 
-​	The `VehicleDiscount` class represents the implementation of the 'decorator' pattern. In this case it wraps the Vehicle by setting a dicount to its price, if it's Black Friday
+**Decorator** is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+
+The `VehicleDiscount` class represents the implementation of the 'decorator' pattern. In this case it wraps the Vehicle by setting a dicount to its price, if it's Black Friday
 
 ```c#
 class VehicleDiscount
@@ -77,7 +129,6 @@ if(vehType == "scooter")
 }
 ```
 
-​	The `Diagnostics` class implements the Bridge pattern. The usage of this pattern is demonstrated by different bridge implementer classes, which make the functionality of Vehicle objects independent from interface implementer classes.
+**Bridge** is a structural design pattern that lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
 
-
-
+The `Diagnostics` class implements the Bridge pattern. The usage of this pattern is demonstrated by different bridge implementer classes, which make the functionality of Vehicle objects independent from the interface implementer classes.
