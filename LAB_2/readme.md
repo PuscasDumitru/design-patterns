@@ -60,11 +60,6 @@ doc.ListPages();
 
 ```
 
-The result of some basic client code:
-
-
-![png](https://github.com/PuscasDumitru/FAF.TMPS16.1-Labs/blob/main/LAB_1/screen.png)
-
 
 ### **Structural design patterns**
 
