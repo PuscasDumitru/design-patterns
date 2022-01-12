@@ -127,3 +127,36 @@ if(vehType == "scooter")
 **Bridge** is a structural design pattern that lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
 
 The `Diagnostics` class implements the Bridge pattern. The usage of this pattern is demonstrated by different bridge implementer classes, which make the functionality of Vehicle objects independent from the interface implementer classes.
+
+### **Behavioral design patterns**
+
+Behavioral design patterns are design patterns that identify common communication patterns among objects. By doing so, these patterns increase flexibility in carrying out communication.
+
+**Strategy** is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
+
+In order to implement the 'Strategy' pattern the: 'ICheck' interface was created(which is common to all variants of the algorithm), 'CheckContext' class which establishes the needed algorithm and the concrete classes 'JuridicCheck' and 'PhysicalCheck' for juridic and physical persons respectively. The context itself is being created in the 'Cashier' class and the execution is started also in this class.
+
+```c#
+
+cashier.Checkout("scooter", "juridic");
+cashier.Checkout("car", "physical");
+cashier.Checkout("motorcycle", "physical");
+
+----
+
+if(strategy == "juridic")
+{
+    context.Strategy = new JuridicCheck();
+}
+
+
+else if (strategy == "physical")
+{
+    context.Strategy = new PhysicalCheck();
+}
+
+context.ExecuteStrategy();
+
+```
+
+
